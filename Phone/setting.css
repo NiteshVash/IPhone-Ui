@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.instagram-container {
+    width: 375px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.logo {
+    width: 100px;
+}
+
+.navbar-icons .icon {
+    width: 24px;
+    margin-left: 15px;
+}
+
+.stories {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.story {
+    text-align: center;
+}
+
+.story-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #c13584; /* Instagram gradient border */
+    padding: 2px;
+}
+
+.story-name {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.post {
+    margin: 15px 0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.post-profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-username {
+    font-weight: bold;
+}
+
+.post-options {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.actions-left .icon,
+.actions-right .icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.actions-right .icon {
+    margin-right: 0;
+}
+
+.likes-count {
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+.post-caption {
+    padding: 0 15px;
+}
+
+.caption-text {
+    font-size: 14px;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #dbdbdb;
+}
+
+.bottom-nav .icon {
+    width: 24px;
+}

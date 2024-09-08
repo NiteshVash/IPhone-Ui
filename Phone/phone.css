@@ -1,0 +1,478 @@
+/* General reset for margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #8d8d8d;
+}
+
+/* Lock screen styling */
+.lock-screen {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.wallpaper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.lock-screen-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 300px;
+  color: white;
+}
+
+input[type="password"] {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#errorMessage {
+  margin-top: 10px;
+  color: red;
+}
+
+/* Home screen styling */
+.iphone-container {
+  display: none;
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-wallpaper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 40px;
+  top: 0;
+  left: 0;
+}
+
+.top-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #000;
+  z-index: 2;
+}
+
+.time {
+  color: white;
+}
+
+
+.status-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.app-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 475px;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.app-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.app-icon img {
+  width: 60%;
+  height: 60%;
+}
+
+.app-icon:hover {
+  transform: scale(1.1);
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.home-indicator {
+  width: 111px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 18px;
+}
+
+/* Settings screen styling */
+#settingsScreen {
+  opacity: 0;
+  transform: scale(0.3); /* Initially scale down */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Transition properties */
+  display: none; /* Initially hidden */
+}
+
+#settingsScreen.open {
+  display: block;
+  opacity: 1;
+  transform: scale(1); /* Return to normal scale */
+}
+
+.settings-container {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background-color: #f5f5f5;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.settings-header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #003f7f;
+}
+
+.settings-section {
+  padding: 15px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings-item:hover {
+  background-color: #f0f0f0;
+}
+
+.settings-item .item-name {
+  font-size: 16px;
+}
+
+.settings-item .item-status {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.toggle-switch {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toggle-switch:checked {
+  background-color: #007bff;
+}
+
+.toggle-switch:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s;
+}
+
+.toggle-switch:checked:before {
+  left: 22px;
+}
+
+/* Camera */
+.camera-ui {
+  width: 100%; /* Full width of the parent container */
+  max-width: 375px; /* Maximum width */
+  height: 100%; /* Full height of the parent container */
+  max-height: 812px; /* Maximum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  margin: 0 auto; /* Center the camera UI on the screen */
+}
+
+.camera-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.viewfinder {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+#cameraFeed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirrors the camera feed to match typical selfie mode */
+}
+
+.zoom-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.zoom-label {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+#zoomRange {
+  width: 80%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: #fff;
+  outline: none;
+  opacity: 0.7;
+}
+
+#zoomRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.camera-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #000;
+  border-top: 1px solid #333;
+}
+
+.modes {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.modes span {
+  font-size: 0.9em;
+  padding: 5px 10px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.modes .active {
+  color: white;
+  font-weight: bold;
+}
+
+.shutter-button {
+  width: 70px;
+  height: 70px;
+  border: 4px solid white;
+  border-radius: 50%;
+  margin-left: 140px;
+  margin-top: -12px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.shutter-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preview {
+  width: 50px;
+  height: 50px;
+  background-color: #666;
+  border-radius: 10px;
+}
+
+.shutter.con {
+  display: flex;
+}
+
+.camera-container {
+  width: 100%; /* Full width of the parent container */
+  max-width: 375px; /* Maximum width to match iPhone dimensions */
+  height: 100%; /* Full height of the parent container */
+  max-height: 812px; /* Maximum height to match iPhone dimensions */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8d8d8d;
+  font-family: Arial, sans-serif;
+  color: white;
+  border-radius: 40px; /* Rounded corners to match the phone body */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adding a shadow to make it look like a phone */
+  overflow: hidden; /* Ensures that content does not overflow the rounded corners */
+  position: relative; /* Ensures child elements like the back button are positioned correctly */
+  margin: 0 auto; /* Center the camera container within the viewport */
+}
+
+.back-buttoncamera {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-buttoncamera:hover {
+  background-color: #003f7f;
+}
+
+#cameraScreen {
+  opacity: 0;
+  transform: scale(0.3); /* Initially scale down */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Transition properties */
+  display: none; /* Initially hidden */
+}
+
+#cameraScreen.open {
+  display: block;
+  opacity: 1;
+  transform: scale(1); /* Return to normal scale */
+}
+
+/* Time container styling */
+.time-container {
+  position: absolute;
+  top: 20px; /* Adjust this value to position vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 100px; /* Adjust as needed */
+  font-weight: bold;
+  z-index: 2;
+}
+
+/*-------- PAssCode -----------*/

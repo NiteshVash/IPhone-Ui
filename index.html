@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone UI Simulation with Lock</title>
+    <link rel="stylesheet" href="phone.css">
+</head>
+
+<body>
+    <!-- Lock screen -->
+    <div class="lock-screen" id="lockScreen">
+        <div class="home-wallpaper">
+            <img src="eee.jpg" alt="Home Wallpaper">
+        </div>
+        
+        <div class="lock-screen-content">
+            <h2>Enter Passcode</h2>
+            <input type="password" id="password" placeholder="Password">
+            <button id="unlockButton">Unlock</button>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <!-- Unlocked home screen -->
+    <div class="iphone-container" id="homeScreen" style="display: none;">
+        <div class="home-wallpaper">
+            <img src="eee.jpg" alt="Home Wallpaper">
+        </div>
+        <div class="top-bar">
+            <span class="time" id="currentTime">9:41</span>
+            <div class="status-icons">
+                <span>🔋</span>
+                <span>📶</span>
+            </div>
+        </div>
+        <div class="time-container">
+            <span class="time" id="currtime">9:41</span>
+        </div>
+        <div class="app-grid">
+            <!-- App icons -->
+            <div class="app-icon" onclick="showSettings()"><img src="Setting.jfif" alt="Settings"></div>
+            <div class="app-icon"><img src="photos.jfif" alt="Photos"></div>
+            <div class="app-icon" onclick="showcamera()"><img src="camara.jfif" alt="Camera"></div>
+            <div class="app-icon"><img src="notes.jfif" alt="Notes"></div>
+            <div class="app-icon" onclick="showInstagram()"><img src="insta.jfif" alt="Instagram"></div>
+            <div class="app-icon"><img src="appstore.jfif" alt="App Store"></div>
+            <div class="app-icon"><img src="wtsapp.jfif" alt="WhatsApp"></div>
+            <div class="app-icon"><img src="music.jfif" alt="Music"></div>
+        </div>
+
+        <div class="bottom-bar">
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div class="settings-container" id="settingsScreen" style="display: none;">
+        <div class="settings-header">
+            <button class="back-button" onclick="showHome()">Back</button>
+            <h2>Settings</h2>
+        </div>
+        <div class="settings-section">
+            <div class="settings-item">
+                <div class="item-name">Wi-Fi</div>
+                <div class="item-status">On</div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Bluetooth</div>
+                <div class="item-status">On</div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Airplane Mode</div>
+                <input type="checkbox" class="toggle-switch">
+            </div>
+            <div class="settings-item">
+                <div class="item-name"  onclick="showPasscode()" >Passcode</div>
+                <div class="item-status">></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Personal Hotspot</div>
+                <div class="item-status">Off</div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name"></div>
+                <div class="item-status"></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Notification</div>
+                <div class="item-status">></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Sound & Haptics</div>
+                <div class="item-status">></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Focus</div>
+                <div class="item-status">></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Screen Time</div>
+                <div class="item-status">></div>
+            </div>
+            <div class="settings-item">
+                <div class="item-name">Gernal</div>
+                <div class="item-status">></div>
+            </div>
+
+        </div>
+    </div>
+
+     <!-- Camera Screen -->
+    <div class="camera-container" id="cameraScreen" style="display: none;">
+        <div class="camera-ui">
+            
+            <div class="camera-header">
+                <div class="header-icons">
+                    <button class="back-buttoncamera" onclick="showHomecamera()">Back</button>
+                    <span>⬤</span>
+                    <span>⏲</span>
+                </div>
+            </div>
+            <div class="viewfinder">
+                <video id="cameraFeed" autoplay playsinline></video>
+            </div>
+            <div class="zoom-slider">
+                <div class="zoom-label">1x</div>
+                <input type="range" min="1" max="5" value="2" id="zoomRange">
+            </div>
+            <div class="camera-controls">
+                <div class="modes">
+                    <span>SLO-MO</span>
+                    <span>VIDEO</span>
+                    <span class="active">PHOTO</span>
+                    <span>SQUARE</span>
+                    <span>PANO</span>
+                </div>
+            </div>
+            <div class="shutter-button"></div>
+            
+        </div>
+    </div>
+   
+    <div class="Passcode-container" id="PasscodeScreen" style="display: none;">
+        <div class="Passcode-ui">
+            <div class="header">
+                <button class="back-buttoncamera" onclick="showHomePasscode()">Back</button>
+            </div>
+            <h2>Enter Passcode</h2>
+            <input type="password" id="passcode" disabled>
+            <div class="keypad">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key">0</button>
+            </div>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <script src="phone.js"></script>
+</body>
+
+</html>
