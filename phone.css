@@ -44,7 +44,6 @@ body {
 
 input[type="password"] {
   padding: 10px;
-  margin-top: 20px;
   border-radius: 5px;
   border: none;
   width: 80%;
@@ -70,7 +69,7 @@ button:hover {
   color: red;
 }
 
-/* Home screen styling */
+/*---------------------------  Home Screen Styling  ---------------------------------*/
 .iphone-container {
   display: none;
   position: relative;
@@ -103,6 +102,8 @@ button:hover {
 
 .time {
   color: white;
+  margin-top: -13px;
+  margin-left: 4px;
 }
 
 
@@ -110,6 +111,11 @@ button:hover {
   display: flex;
   gap: 10px;
   font-size: 18px;
+}
+
+.status-icons img {
+  margin-top: -7px;
+  width: 39px;
 }
 
 .app-grid {
@@ -163,18 +169,22 @@ button:hover {
   margin-left: 18px;
 }
 
-/* Settings screen styling */
+/*-------------------------------Setting Screen Styling---------------------------------*/
 #settingsScreen {
   opacity: 0;
-  transform: scale(0.3); /* Initially scale down */
-  transition: opacity 0.4s ease, transform 0.4s ease; /* Transition properties */
-  display: none; /* Initially hidden */
+  transform: scale(0.3);
+  /* Initially scale down */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Transition properties */
+  display: none;
+  /* Initially hidden */
 }
 
 #settingsScreen.open {
   display: block;
   opacity: 1;
-  transform: scale(1); /* Return to normal scale */
+  transform: scale(1);
+  /* Return to normal scale */
 }
 
 .settings-container {
@@ -245,7 +255,7 @@ button:hover {
   appearance: none;
   width: 40px;
   height: 20px;
-  
+
   background-color: #ccc;
   border-radius: 20px;
   position: relative;
@@ -274,12 +284,16 @@ button:hover {
   left: 22px;
 }
 
-/* Camera */
+/*-------------------------------------- Camera --------------------------------------*/
 .camera-ui {
-  width: 100%; /* Full width of the parent container */
-  max-width: 375px; /* Maximum width */
-  height: 100%; /* Full height of the parent container */
-  max-height: 812px; /* Maximum height */
+  width: 100%;
+  /* Full width of the parent container */
+  max-width: 375px;
+  /* Maximum width */
+  height: 100%;
+  /* Full height of the parent container */
+  max-height: 812px;
+  /* Maximum height */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -287,7 +301,8 @@ button:hover {
   position: relative;
   border-radius: 40px;
   overflow: hidden;
-  margin: 0 auto; /* Center the camera UI on the screen */
+  margin: 0 auto;
+  /* Center the camera UI on the screen */
 }
 
 .camera-header {
@@ -318,7 +333,8 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scaleX(-1); /* Mirrors the camera feed to match typical selfie mode */
+  transform: scaleX(-1);
+  /* Mirrors the camera feed to match typical selfie mode */
 }
 
 .zoom-slider {
@@ -416,21 +432,30 @@ button:hover {
 }
 
 .camera-container {
-  width: 100%; /* Full width of the parent container */
-  max-width: 375px; /* Maximum width to match iPhone dimensions */
-  height: 100%; /* Full height of the parent container */
-  max-height: 812px; /* Maximum height to match iPhone dimensions */
+  width: 100%;
+  /* Full width of the parent container */
+  max-width: 375px;
+  /* Maximum width to match iPhone dimensions */
+  height: 100%;
+  /* Full height of the parent container */
+  max-height: 812px;
+  /* Maximum height to match iPhone dimensions */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #8d8d8d;
   font-family: Arial, sans-serif;
   color: white;
-  border-radius: 40px; /* Rounded corners to match the phone body */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adding a shadow to make it look like a phone */
-  overflow: hidden; /* Ensures that content does not overflow the rounded corners */
-  position: relative; /* Ensures child elements like the back button are positioned correctly */
-  margin: 0 auto; /* Center the camera container within the viewport */
+  border-radius: 40px;
+  /* Rounded corners to match the phone body */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  /* Adding a shadow to make it look like a phone */
+  overflow: hidden;
+  /* Ensures that content does not overflow the rounded corners */
+  position: relative;
+  /* Ensures child elements like the back button are positioned correctly */
+  margin: 0 auto;
+  /* Center the camera container within the viewport */
 }
 
 .back-buttoncamera {
@@ -452,27 +477,267 @@ button:hover {
 
 #cameraScreen {
   opacity: 0;
-  transform: scale(0.3); /* Initially scale down */
-  transition: opacity 0.4s ease, transform 0.4s ease; /* Transition properties */
-  display: none; /* Initially hidden */
+  transform: scale(0.3);
+  /* Initially scale down */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Transition properties */
+  display: none;
+  /* Initially hidden */
 }
 
 #cameraScreen.open {
   display: block;
   opacity: 1;
-  transform: scale(1); /* Return to normal scale */
+  transform: scale(1);
+  /* Return to normal scale */
 }
 
 /* Time container styling */
 .time-container {
   position: absolute;
-  top: 20px; /* Adjust this value to position vertically */
+  top: 20px;
+  /* Adjust this value to position vertically */
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 100px; /* Adjust as needed */
+  font-size: 100px;
+  /* Adjust as needed */
   font-weight: bold;
   z-index: 2;
 }
 
-/*-------- PAssCode -----------*/
+/*--------------------------------------- PAssCode --------------------------------------*/
+
+.Passcode_container {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background-color: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.Passcode-ui {
+  width: 375px;
+  height: 812px;
+  background-color: rgba(251, 251, 251, 0.9);
+  border-radius: 40px;
+}
+
+.lock-icon {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.key:hover {
+  background-color: #3eefff;
+}
+
+.inputpasscode {
+  margin: 13px;
+  margin-left: 35px;
+  margin-top: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.con h1 {
+  margin-top: 247px;
+  margin-left: 75px;
+  color: rgb(0, 0, 0);
+}
+
+.backbuttonPasscode button {
+  margin-top: -5px;
+  margin-left: -12px;
+}
+
+
+.back-buttonPasscode {
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family: 13.3333px Arial, Helvetica, sans-serif;
+}
+
+#PasscodeScreen.open {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ChangeaPassword {
+  margin-left: 111px;
+}
+
+.Passcodeheader {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  justify-content: center;
+  position: relative;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.headerpasscode {
+  margin-left: 111px;
+  margin-top: -25px;
+}
+
+#PasscodeScreen {
+  opacity: 0;
+  transform: scale(0.3);
+  /* Initially scale down */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Transition properties */
+  display: none;
+  /* Initially hidden */
+}
+
+/*----------------------------   Display & Brightness ------------------------------*/
+
+.Display_Container {
+  max-width: 400px;
+  width: 375px;
+  height: 812px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Displayheader{
+  background-color: #007bff;
+  color: white;
+  padding: 30px;
+  margin: -21px;
+  justify-content: center;
+  position: relative;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.Displayheader h2{
+  color: #fff;
+  margin-bottom: 10px;
+  margin-top: -35px;
+  margin-left: 50px;
+}
+.appearance {
+  margin: 20px 0;
+}
+
+.mode {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.option {
+  text-align: center;
+}
+
+.option img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.back_buttonDisplay{
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family: 13.3333px Arial, Helvetica, sans-serif;
+}
+
+.Displayheader button{
+  margin-top: -5px;
+  margin-left: -21px;
+}
+
+.lightmodeinput[type="radio"]:checked  {
+  border: 1px solid #007aff;
+}
+
+.darkmodeinput[type="radio"]:checked + label img {
+  border: 2px solid #007aff;
+}
+
+.Autotoggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  
+}
+
+.textsizeinput[type="range"] {
+  width: 100%;
+  height: 20px;
+}
+
+.brightnessinput[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.appearance h3{
+  font-size: 20px;
+    margin: 9px;
+    width: 329px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    margin-left: 3px;
+}
+
+.lowerbody{
+  margin-top: 30px;
+}
+
+.text-options{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.brightness{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.true-tone{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 17px;
+    margin-top: 14px;
+}
+
+.night-shift{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 17px;
+    margin-top: 14px;
+}
+
+.toggle{
+  font-size: 17px;
+}
+
+/* Initial state for Display Screen */
+#DisplayScreen {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;
+}
+
+/* Final state for Display Screen */
+#DisplayScreen.open {
+  opacity: 1;
+  transform: scale(1);
+}
