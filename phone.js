@@ -141,74 +141,125 @@ updateTime();
 
 
 // -----------Show PASSCODE --------------------------
-// Function to show the passcode screen
-function showPasscode() {
-  const passcodeScreen = document.getElementById('PasscodeScreen');
+const passcode = document.querySelector('#passcode')
+passcode.addEventListener('click', () => {
+  const PasscodeScreen = document.getElementById('PasscodeScreen');
   const settingsScreen = document.getElementById('settingsScreen');
 
-  // Hide the settings screen
+  // console.log("hello");
+
+  // Hide the home screen
   settingsScreen.style.display = 'none';
 
-  // Show the passcode screen and trigger the animation
-  passcodeScreen.style.display = 'block';
+  // Add a delay before applying the 'open' class to trigger the transition
+  // Passcode_container.style.display = 'block';
+  PasscodeScreen.style.display = "block"
   setTimeout(() => {
-    passcodeScreen.classList.add('open');
+    PasscodeScreen.classList.add('open');
   }, 10); // Tiny delay to allow the display change to take effect
-}
 
-// Function to go back to the settings screen from the passcode screen
-function showSettingsFromPasscode() {
-  const passcodeScreen = document.getElementById('PasscodeScreen');
+})
+
+
+function showHomePasscode() {// Function to show the passcode screen
+  function showPasscode() {
+    const passcodeScreen = document.getElementById('PasscodeScreen');
+    const settingsScreen = document.getElementById('settingsScreen');
+
+    // Hide the settings screen
+    settingsScreen.style.display = 'none';
+
+    // Show the passcode screen and trigger the animation
+    passcodeScreen.style.display = 'block';
+    setTimeout(() => {
+      passcodeScreen.classList.add('open');
+    }, 10); // Tiny delay to allow the display change to take effect
+  }
+
+  // Function to go back to the settings screen from the passcode screen
+  function showSettingsFromPasscode() {
+    const passcodeScreen = document.getElementById('PasscodeScreen');
+    const settingsScreen = document.getElementById('settingsScreen');
+
+    // Start by removing the 'open' class to trigger the closing animation
+    passcodeScreen.classList.remove('open');
+
+    // Add a delay to allow the closing animation to complete before hiding the element
+    setTimeout(() => {
+      passcodeScreen.style.display = 'none';
+      settingsScreen.style.display = 'block';
+    }, 400); // Matches the duration of the animation (0.4s)
+  }
+
+
+  // Event listener for the passcode button
+  document.querySelector('#passcode').addEventListener('click', showPasscode);
+
+  // Event listener for going back to settings from passcode screen
+  document.querySelector('.back-buttonPasscode').addEventListener('click', showSettingsFromPasscode);
+
+  const PasscodeScreen = document.getElementById('PasscodeScreen');
   const settingsScreen = document.getElementById('settingsScreen');
 
+  settingsScreen.style.display = 'block';
+
+  // const homeScreen = document.getElementById('homeScreen');
+  // console.log("hello");
+
   // Start by removing the 'open' class to trigger the closing animation
-  passcodeScreen.classList.remove('open');
+  PasscodeScreen.style.display = "none"
 
   // Add a delay to allow the closing animation to complete before hiding the element
-  setTimeout(() => {
-    passcodeScreen.style.display = 'none';
-    settingsScreen.style.display = 'block';
-  }, 400); // Matches the duration of the animation (0.4s)
+  // setTimeout(() => {
+  //   PasscodeScreen.style.display = 'none';
+  //   homeScreen.style.display = 'block';
+  // }, 550); // Matches the duration of the animation (0.5s)
 }
 
-// Event listener for the passcode button
-document.querySelector('#passcode').addEventListener('click', showPasscode);
 
-// Event listener for going back to settings from passcode screen
-document.querySelector('.back-buttonPasscode').addEventListener('click', showSettingsFromPasscode);
+const password = document.querySelector('.Passcode-container .inputpasscode')
+const ChangeaPassword = document.querySelector(".ChangeaPassword")
+
+ChangeaPassword.addEventListener("click", () => {
+
+  localStorage.setItem("password", password.value)
+  alert("Password change Succesfully")
+  // console.log(password.value);
+})
 
 //----------------- DISPLAY & BRIGHTNESS -----------------------------
-// Get the Display and Settings screen elements
-const DisplayButton = document.querySelector('#Display');
-DisplayButton.addEventListener('click', () => {
+
+const Display = document.querySelector('#Display')
+Display.addEventListener('click', () => {
   const DisplayScreen = document.getElementById('DisplayScreen');
   const settingsScreen = document.getElementById('settingsScreen');
 
-  // Hide the settings screen
+  console.log("hello");
+
+  // Hide the home screen
   settingsScreen.style.display = 'none';
 
-  // Show the display screen
-  DisplayScreen.style.display = 'block';
-
-  // Add a tiny delay before triggering the animation
+  // Add a delay before applying the 'open' class to trigger the transition
+  // Passcode_container.style.display = 'block';
+  DisplayScreen.style.display = "block"
   setTimeout(() => {
     DisplayScreen.classList.add('open');
   }, 10); // Tiny delay to allow the display change to take effect
-});
 
-// Function to return to settings
+})
+
 function showsetting() {
   const DisplayScreen = document.getElementById('DisplayScreen');
   const settingsScreen = document.getElementById('settingsScreen');
 
-  // Start closing animation
+  // Start by removing the 'open' class to trigger the closing animation
   DisplayScreen.classList.remove('open');
 
-  // Wait for animation to finish before switching screens
+  // Add a delay to allow the closing animation to complete before hiding the element
   setTimeout(() => {
     DisplayScreen.style.display = 'none';
     settingsScreen.style.display = 'block';
-  }, 400); // Matches the duration of the animation (0.4s)
+  }, 550); // Matches the duration of the animation (0.5s)
 }
 
 
@@ -216,7 +267,6 @@ function showsetting() {
 
 
 // Brightness Slider
-
 
 const brightnessRange = document.getElementById('brightness');
 
